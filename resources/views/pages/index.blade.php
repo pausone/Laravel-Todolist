@@ -9,18 +9,6 @@
 	<a href="/about">About</a>
 	<a href="/services">Services</a>
 	@php
-		$name = 'Paula';
-		$age = 40;
-
-		$compact = compact('name', 'age');
-		//$compact = compact($name, $age);
-		echo '<br><br>';
-		var_dump($compact);
-
-
-		$arr = array('name' => 'Paula', 'age' => 40);
-
-		echo '<br><br>';
-		var_dump($arr);
+		//Add table of TODO-items
 	@endphp
 @endsection
