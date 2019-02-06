@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
-    	$title = "Welcome to Laravel";
-    	return view('pages.index');
+    	$title = "Welcome to Todo!";
+    	return view('pages.index')->with('title', $title);;
     }
 
     public function about(){
     	$title = "About";
-    	return view('pages.about')->with('title_alt', $title);
+    	return view('pages.about')->with('title', $title);
      	//Alt:
     	//return view('pages.services', compact('title'));
     }
