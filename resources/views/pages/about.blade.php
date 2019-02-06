@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	<h1>{{$title_alt}}</h1> 
+	<h1>{{$title}}</h1> 
 @endsection
 
 @section('content')
