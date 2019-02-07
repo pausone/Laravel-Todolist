@@ -2,7 +2,7 @@
 
 @section('content')
 	<h1>Todo-items</h1> 
-	@if (count($tasks) > 1)
+	@if (count($tasks) > 0)
 		<table class="table">
 		    <thead>
 		        <tr>
@@ -26,6 +26,7 @@
 				@endforeach
 		    </tbody>
 		</table>
+		{{$tasks->links()}}
 	@else
 		<p>No tasks found</p>
 	@endif
