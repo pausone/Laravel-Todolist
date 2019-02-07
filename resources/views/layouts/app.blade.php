@@ -9,7 +9,6 @@
     <body>  
         @include('inc.navbar')
         <div class="container">
-            @yield('title')
             @yield('content')          
         </div>
     </body>
