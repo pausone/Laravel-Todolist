@@ -5,5 +5,6 @@
         <a class="p-2 text-dark" href="/about">About</a>
         <a class="p-2 text-dark" href="/services">Services</a>
         <a class="p-2 text-dark" href="/tasks">Todos</a>
+        <a class="p-2 text-dark" href="/tasks/create">Create task</a>
     </nav>
 </div>
