@@ -8,6 +8,16 @@ use App\Task;
 class TasksController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -40,15 +50,14 @@ class TasksController extends Controller
     {
         $this->validate($request, [
             'description' => 'required',
-            'due_date' => 'required',
-            'category_id' => 'required'
+            'due_date' => 'required'
         ]);
 
         //Create Task
         $task = new Task;
         $task->description = $request->description;
         $task->due_date = $request->due_date;
-        $task->category_id = $request->category_id;
+        $task->user_id = auth()->user()->id;
         $task->save();
 
         return redirect('/tasks')->with('success', 'Task created');
@@ -87,7 +96,18 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'description' => 'required',
+            'due_date' => 'required'
+        ]);
+
+        //Create Task
+        $task = Task::find($id);
+        $task->description = $request->description;
+        $task->due_date = $request->due_date;
+        $task->save();
+
+        return redirect('/tasks')->with('success', 'Task updated');
     }
 
     /**
@@ -98,6 +118,9 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::find($id);
+        $task->delete();
+
+       return redirect('/tasks')->with('success', 'Task deleted');
     }
 }
