@@ -5,9 +5,12 @@
 	<h1>{{$task->description}}</h1>
 	<hr>	
 	<p>Due date: {{$task->due_date}}</p>
-	<p>Category id: {{$task->category_id}}</p>
 	<p>Created at: {{$task->created_at}}</p>
 	<hr>
-	<a href="/tasks/{{$task->id}}/edit" class="btn btn-outline-primary">Edit</a>
+	<a href="/tasks/{{$task->id}}/edit" class="btn btn-primary">Edit</a>
 
+	{!!Form::open(['action' => ['TasksController@destroy', $task->id], 'method' => 'POST', 'class' => 'float-right'])!!}
+		{{Form::hidden('_method', 'DELETE')}}
+		{{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+	{!!Form::close()!!}
 @endsection

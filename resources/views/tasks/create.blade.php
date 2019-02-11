@@ -12,10 +12,6 @@
 	 	{{Form::label('due_date', 'Due date')}}
 	 	{{Form::text('due_date', '', ['class' => 'form-control', 'placeholder' => 'YYYYMMDD'])}}
 	 </div>
-	 <div class="form-group">
-	 	{{Form::label('category_id', 'Category')}}
-	 	{{Form::select('category_id', ['1' => 'Personal', '2' => 'Work'])}}
-	 </div>
 	{{Form::submit('Submit',['class' => 'btn btn-primary'])}}
 	{!! Form::close() !!}	
 @endsection
