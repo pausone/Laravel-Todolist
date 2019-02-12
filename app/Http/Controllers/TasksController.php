@@ -14,7 +14,7 @@ class TasksController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth');
     }
 
     /**
@@ -24,9 +24,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        //$tasks = Task::all();
-        //$tasks = Task::orderBy('description', 'asc')->paginate(10); 
-        $tasks = Task::orderBy('created_at','desc')->paginate(10); 
+        $tasks = Task::where('user_id', auth()->user()->id)->orderBy('due_date','asc')->paginate(8); 
         return view('tasks.index')->with('tasks', $tasks);
     }
 
@@ -50,7 +48,7 @@ class TasksController extends Controller
     {
         $this->validate($request, [
             'description' => 'required',
-            'due_date' => 'required'
+            'due_date' => 'required|date'
         ]);
 
         //Create Task
@@ -72,6 +70,12 @@ class TasksController extends Controller
     public function show($id)
     {
         $task = Task::find($id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $task->user_id){
+            return redirect('/tasks')->with('error', 'Unauthorized page');
+        }
+
         return view('tasks.show')->with('task', $task);
     }
 
@@ -84,6 +88,12 @@ class TasksController extends Controller
     public function edit($id)
     {
         $task = Task::find($id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $task->user_id){
+            return redirect('/tasks')->with('error', 'Unauthorized page');
+        }
+
         return view('tasks.edit')->with('task', $task);
     }
 
@@ -98,11 +108,17 @@ class TasksController extends Controller
     {
         $this->validate($request, [
             'description' => 'required',
-            'due_date' => 'required'
+            'due_date' => 'required|date'
         ]);
 
         //Create Task
         $task = Task::find($id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $task->user_id){
+            return redirect('/tasks')->with('error', 'Unauthorized page');
+        }
+
         $task->description = $request->description;
         $task->due_date = $request->due_date;
         $task->save();
@@ -119,6 +135,12 @@ class TasksController extends Controller
     public function destroy($id)
     {
         $task = Task::find($id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $task->user_id){
+            return redirect('/tasks')->with('error', 'Unauthorized page');
+        }
+
         $task->delete();
 
        return redirect('/tasks')->with('success', 'Task deleted');
