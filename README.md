@@ -1,2 +1,2 @@
-# Laravel-Todolist (in development)
+# Laravel-Todolist
 Application for handling tasks
