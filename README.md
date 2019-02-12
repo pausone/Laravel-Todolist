@@ -9,7 +9,11 @@ Application for handling tasks
 | ------------- | 
 | View your tasks after login| 
 
-| ![Image login](/screenshots/create.JPG)   | 
+| ![Image login](/screenshots/view.JPG)   | 
+| ------------- | 
+| View task| 
+
+| ![Image login](/screenshots/create.JPG?)   | 
 | ------------- | 
 | Create task| 
 
