@@ -1,21 +1,21 @@
 # Laravel-Todolist
 Application for handling tasks
 
-| ![Image login](/screenshots/pages_index.png) | 
+| ![Image login](/screenshots/pages_index.JPG) | 
 | ------------- | 
 | Index page| 
 
-| ![Image login](/screenshots/tasks_index.png)   | 
+| ![Image login](/screenshots/tasks_index.JPG)   | 
 | ------------- | 
-| Added items show in dropdown| 
+| View your tasks after login| 
 
-| ![Image login](/screenshots/create.png)   | 
+| ![Image login](/screenshots/create.JPG)   | 
 | ------------- | 
-| Register for receiving newsletter| 
+| Create task| 
 
-| ![Image login](/screenshots/edit.png)   | 
+| ![Image login](/screenshots/edit.JPG)   | 
 | ------------- | 
-| Login| 
+| Edit task| 
 
 
 
