@@ -13,7 +13,7 @@ Application for handling tasks
 | ------------- | 
 | View task| 
 
-| ![Image login](/screenshots/create2.JPG?)   | 
+| ![Image login](/screenshots/create.JPG?)   | 
 | ------------- | 
 | Create task| 
 
