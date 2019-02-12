@@ -8,21 +8,6 @@ class PagesController extends Controller
 {
     public function index(){
     	$title = "Welcome to Todo!";
-    	return view('pages.index')->with('title', $title);;
-    }
-
-    public function about(){
-    	$title = "About";
-    	return view('pages.about')->with('title', $title);
-     	//Alt:
-    	//return view('pages.services', compact('title'));
-    }
-
-    public function services(){   
-    	$data = array(
-    		'title' => 'Services',
-    		'services' => ['Web Design', 'Programming', 'SEO']
-    	); 	
-    	return view('pages.services')->with($data);
+    	return view('pages.index')->with('title', $title);
     }
 }
