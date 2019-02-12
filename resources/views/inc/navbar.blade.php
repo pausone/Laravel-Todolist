@@ -14,10 +14,9 @@
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-				<li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
-				<li class="nav-item"><a class="nav-link" href="/tasks">Todos</a></li>
-				<li class="nav-item"><a class="nav-link" href="/tasks/create">Create task</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tasks">Todos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tasks/create">Create task</a></li>
+
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
@@ -35,7 +34,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        	<a class="dropdown-item"  href="/home">Home</a>
+                        	<a class="dropdown-item"  href="/tasks">Todos</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
