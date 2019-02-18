@@ -26,7 +26,6 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        //var_dump($user->tasks); die();
         return view('home')->with('tasks', $user->tasks);
     }
 }
