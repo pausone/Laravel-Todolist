@@ -1,4 +1,4 @@
-# Laravel-Todolist
+# Laravel-Todolist (2 branches)
 Application for handling tasks
 
 | ![Image login](/screenshots/pages_index.JPG) | 
