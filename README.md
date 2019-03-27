@@ -2,7 +2,7 @@
 Application for handling tasks.
 
 
-TODO week 13: Validate input
+TODO: Validation
 
 | ![Image login](/screenshots/pages_index.JPG) | 
 | ------------- | 
