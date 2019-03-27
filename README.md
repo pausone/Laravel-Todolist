@@ -1,5 +1,7 @@
 # Laravel-Todolist (2 branches)
-Application for handling tasks
+Application for handling tasks.
+
+
 TODO week 13: Validate input
 
 | ![Image login](/screenshots/pages_index.JPG) | 
