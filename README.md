@@ -2,7 +2,7 @@
 Application for handling tasks.
 
 
-TODO: Validation
+TODO in project: Validation
 
 | ![Image login](/screenshots/pages_index.JPG) | 
 | ------------- | 
