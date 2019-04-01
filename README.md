@@ -1,6 +1,8 @@
 # Laravel-Todolist
 Application for handling tasks.
+
 Uses javascript dataTables and jQuery validation plugins.
+
 TODO in project: Complete frontend and backend validation
 
 | ![Image login](/screenshots/tasks_index.JPG)   | 
