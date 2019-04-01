@@ -10,7 +10,7 @@
 		</div>
 		<div class="form-group">
 		 	{{Form::label('due_date', 'Due date')}}
-		 	{{Form::text('due_date', $task->due_date, ['class' => 'form-control', 'placeholder' => 'YYYYMMDD'])}}
+		 	{{Form::text('due_date', $task->due_date, ['class' => 'form-control datepicker', 'placeholder' => 'DD/MM/YYYY'])}}
 		</div>
 		{{Form::hidden('_method', 'PUT')}}
 		{{Form::submit('Submit',['class' => 'btn btn-primary'])}}

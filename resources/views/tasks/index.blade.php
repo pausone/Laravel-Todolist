@@ -1,35 +1,34 @@
 @extends('layouts.app')
-
 @section('content')
-	<h1>Todo-items</h1> 
+	<h1>Todo items</h1> 
 	@if (count($tasks) > 0)
-		<p>{{count($tasks)}} items</p>
-		<table class="table">
-		    <thead>
-		        <tr>		           
-		            <th scope="col">Duedate</th> 
-		            <th scope="col">Todo</th>
-		            <th scope="col">Actions</th>
-		        </tr>
-		  	</thead>
-			<tbody>
-				@foreach ($tasks as $task)
-					<tr>
-						<td>{{$task->due_date}}</td>
-						<td>{{$task->description}}</td>						
-						<td>
-							<a href="/tasks/{{$task->id}}"  class="btn btn-outline-primary">View</a>
-							<a href="/tasks/{{$task->id}}/edit" class="btn btn-outline-primary">Edit</a>
-                            {!!Form::open(['action' => ['TasksController@destroy', $task->id], 'method' => 'POST', 'class' => 'float-right'])!!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-                            {!!Form::close()!!}
-						</td>
-					</tr>
-				@endforeach
-		    </tbody>
-		</table>
-		{{$tasks->links()}}
+		<center>
+			<table id="myTable" class="table">
+			    <thead>
+			        <tr>		            
+			            <th scope="col"><span class="th-sort">Sort by: </span>Todo</th>
+			            <th class="col-due-date" scope="col"><span class="th-sort">Sort by: </span>Duedate</th> 
+			            <th id="th-actions" scope="col">Actions</th>
+			        </tr>
+			  	</thead>
+				<tbody>
+					@foreach ($tasks as $task)
+						<tr>						
+							<td data-th="Todo:">{{$task->description}}</td>	
+							<td data-th="Due Date:" class="col-due-date">{{$task->due_date}}</td>					
+							<td data-th="Actions:" class="col-actions">
+								<a href="/tasks/{{$task->id}}" class="btn btn-outline-primary btn-sm" title="Details"><i class="fas fa-info"></i></a>
+								<a href="/tasks/{{$task->id}}/edit" class="btn btn-outline-primary btn-sm" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+	                            {!!Form::open(['action' => ['TasksController@destroy', $task->id], 'method' => 'POST', 'class' => 'float-right'])!!}
+	                                {{Form::hidden('_method', 'DELETE')}}
+	                                {{Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm',  'title' => 'Details'])}}
+	                            {!!Form::close()!!}
+							</td>
+						</tr>
+					@endforeach
+			    </tbody>
+			</table>
+		</center>
 	@else
 		<p>No tasks found</p>
 	@endif

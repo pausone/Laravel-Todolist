@@ -24,7 +24,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Task::where('user_id', auth()->user()->id)->orderBy('due_date','asc')->paginate(8); 
+        $tasks = Task::where('user_id', auth()->user()->id)->orderBy('due_date','asc')->get(); 
         return view('tasks.index')->with('tasks', $tasks);
     }
 
@@ -46,10 +46,14 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        //Make sure date is correct format to store
+        //$datetime = DateTime::createFromFormat('DD/MM/YY', $request->create_due_date) or die('Error: Could not create Date');
+
         $this->validate($request, [
-            'description' => 'required',
-            'due_date' => 'required|date'
+            'description' => 'required|min:3|max:255',
+            'due_date' => 'required|date_format:d/m/Y'
         ]);
+
 
         //Create Task
         $task = new Task;
@@ -107,8 +111,8 @@ class TasksController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'description' => 'required',
-            'due_date' => 'required|date'
+            'description' => 'required|min:3|max:255',
+            'due_date' => 'required|date_format:d/m/Y'
         ]);
 
         //Create Task

@@ -1,0 +1,100 @@
+@import '~datatables.net-dt/css/jquery.dataTables.min.css';
+
+.col-actions{
+	max-width: 110px;
+}
+
+nav{
+	margin-bottom: 10px;
+}
+
+th{
+	background: #f2f2f2;
+}
+
+.th-sort{
+	display: none;
+}
+
+.table {
+  max-width: 450px;
+}
+
+#main{
+	padding-bottom: 10px;
+}
+
+.table th,
+.table td {
+  padding: 0.3rem;
+  vertical-align: bottom;
+}
+
+//Custom dataTables
+#myTable_wrapper {
+   max-width: 600px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+	background: unset;	
+	border-color: #3490dc;
+	color: #3490dc !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+	background: #3490dc;
+	color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+	background: #3490dc;	
+	color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+	padding: 0.25em 0.5em;
+}
+
+
+@media only screen and (max-width: 375px) {
+	.table table, 
+	.table thead, 
+	.table tbody, 
+	.table th, 
+	.table td, 
+	.table tr { 
+		display: block;
+	}
+
+	#th-actions{
+		border: none;
+		padding: 0px;
+	}
+
+	//http://thenewcode.com/852/A-Fresh-Approach-to-Responsive-Tables
+	.table tbody td:before {
+		content: attr(data-th);
+		font-weight: bold;
+		display: inline-block;
+		width: 6rem; 
+	}
+
+	.col-actions{
+		min-width: 90px;
+		max-width: unset;
+		border-bottom: 1px solid black;
+
+	}
+
+	.th-sort{
+		display: inline;
+	}
+
+	#myTable {
+	  width: 100vw;
+	  margin-left: -15px;
+	}
+}
+
+
+
