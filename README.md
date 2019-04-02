@@ -3,7 +3,7 @@ Application for handling tasks.
 
 Responsive. Sortable, searchable table.
 
-Uses JavaScript dataTables aswell as jQuery Validation plugins.
+Uses jQuery plugins DataTables and jQuery Validation.
 
 Uses Bootstrap for styling.
 
