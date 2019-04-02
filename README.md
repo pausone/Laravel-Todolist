@@ -1,7 +1,11 @@
 # Laravel-Todolist
-Application for handling tasks. Responsive. Sortable, searchable table.
+Application for handling tasks. 
+
+Responsive. Sortable, searchable table.
 
 Uses JavaScript dataTables and jQuery validation plugins.
+
+See mobile version at bottom of this document.
 
 TODO in project: Complete frontend and backend validation
 
