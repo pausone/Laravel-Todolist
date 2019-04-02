@@ -3,7 +3,7 @@
 @section('content')
 	<a href="/tasks" class="btn btn-outline-primary">Go back</a><br><br>
 	<h1>Create task</h1>
-	{!! Form::open(['id' => 'create-task-form', 'action' => 'TasksController@store', 'method' => 'POST']) !!}
+	{!! Form::open(['id' => 'todo-form', 'action' => 'TasksController@store', 'method' => 'POST']) !!}
 	 <div class="form-group">
 	 	{{Form::label('description', 'Todo')}}
 	 	{{Form::text('description', '', ['class' => 'form-control', 'placeholder' => 'Description'])}}
