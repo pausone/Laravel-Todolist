@@ -3,7 +3,7 @@
 @section('content')
 	<a href="/tasks" class="btn btn-outline-primary">Go back</a><br><br>
 	<h1>Edit task</h1>
-	{!! Form::open(['id' => 'todo-form', 'action' => ['TasksController@update', $task->id], 'method' => 'POST']) !!}
+	{!! Form::open(['action' => ['TasksController@update', $task->id], 'method' => 'POST']) !!}
 		<div class="form-group">
 		 	{{Form::label('description', 'Todo')}}
 		 	{{Form::text('description', $task->description, ['class' => 'form-control', 'placeholder' => 'Description'])}}

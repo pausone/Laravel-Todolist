@@ -10742,6 +10742,14 @@ th {
     display: inline;
   }
 
+  /*.container{
+  		padding: 0;
+  	}
+  
+  	h1{
+  		margin-left: 15px;
+  	}*/
+
   #myTable {
     width: 100vw;
     margin-left: -15px;
