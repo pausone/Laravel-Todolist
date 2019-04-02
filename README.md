@@ -7,9 +7,9 @@ Uses jQuery plugins DataTables and jQuery Validation.
 
 Uses Bootstrap for styling.
 
-See mobile version at bottom of this document.
+Has frontend and backend validation for form input.
 
-TODO in project: Complete frontend and backend validation
+See mobile version at bottom of this document.
 
 | ![Image login](/screenshots/tasks_index.JPG)   | 
 | ------------- | 
