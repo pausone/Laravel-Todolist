@@ -6,9 +6,9 @@
 			<table id="myTable" class="table">
 			    <thead>
 			        <tr>		            
-			            <th scope="col"><span class="th-sort">Sort by: </span>Todo</th>
-			            <th class="col-due-date" scope="col"><span class="th-sort">Sort by: </span>Duedate</th> 
-			            <th id="th-actions" scope="col">Actions</th>
+			            <th scope="col"><span class="span-sort">Sort by: </span>Todo</th>
+			            <th class="col-due-date" scope="col"><span class="span-sort">Sort by: </span>Duedate</th> 
+			            <th id="th-actions" scope="col"><span id="span-actions">Actions</span></th>
 			        </tr>
 			  	</thead>
 				<tbody>
@@ -16,7 +16,7 @@
 						<tr>						
 							<td data-th="Todo:">{{$task->description}}</td>	
 							<td data-th="Due Date:" class="col-due-date">{{$task->due_date}}</td>					
-							<td data-th="Actions:" class="col-actions">
+							<td class="col-actions">
 								<a href="/tasks/{{$task->id}}" class="btn btn-outline-primary btn-sm" title="Details"><i class="fas fa-info"></i></a>
 								<a href="/tasks/{{$task->id}}/edit" class="btn btn-outline-primary btn-sm" title="Edit"><i class="fas fa-pencil-alt"></i></a>
 	                            {!!Form::open(['action' => ['TasksController@destroy', $task->id], 'method' => 'POST', 'class' => 'float-right'])!!}

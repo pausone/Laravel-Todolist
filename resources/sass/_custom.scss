@@ -1,27 +1,15 @@
 @import '~datatables.net-dt/css/jquery.dataTables.min.css';
 
-.col-actions{
-	max-width: 110px;
-}
-
 nav{
 	margin-bottom: 10px;
 }
 
-th{
-	background: #f2f2f2;
-}
-
-.th-sort{
-	display: none;
+#main{
+	padding-bottom: 10px;
 }
 
 .table {
   max-width: 450px;
-}
-
-#main{
-	padding-bottom: 10px;
 }
 
 .table th,
@@ -30,31 +18,43 @@ th{
   vertical-align: bottom;
 }
 
+th{
+	background: #f2f2f2;
+}
+
+.span-sort{
+	display: none;
+}
+
+.col-actions{
+	max-width: 110px;
+}
+
+
 //Custom dataTables
-#myTable_wrapper {
-   max-width: 600px;
-}
+	#myTable_wrapper {
+	   max-width: 600px;
+	}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current{
-	background: unset;	
-	border-color: #3490dc;
-	color: #3490dc !important;
-}
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+		background: unset;	
+		border-color: #3490dc;
+		color: #3490dc !important;
+	}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
-	background: #3490dc;
-	color: white !important;
-}
+	.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+		background: #3490dc;
+		color: white !important;
+	}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
-	background: #3490dc;	
-	color: white !important;
-}
+	.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+		background: #3490dc;	
+		color: white !important;
+	}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button{
-	padding: 0.25em 0.5em;
-}
-
+	.dataTables_wrapper .dataTables_paginate .paginate_button{
+		padding: 0.25em 0.5em;
+	}
 
 @media only screen and (max-width: 375px) {
 	.table table, 
@@ -66,17 +66,17 @@ th{
 		display: block;
 	}
 
-	#th-actions{
-		border: none;
-		padding: 0px;
-	}
-
-	//http://thenewcode.com/852/A-Fresh-Approach-to-Responsive-Tables
 	.table tbody td:before {
 		content: attr(data-th);
 		font-weight: bold;
 		display: inline-block;
 		width: 6rem; 
+	}
+
+	//Make table fill out viewport and "ignore" padding
+	#myTable {
+	  width: 100vw;
+	  margin-left: -15px;
 	}
 
 	.col-actions{
@@ -86,14 +86,19 @@ th{
 
 	}
 
-	.th-sort{
+	.span-sort{
 		display: inline;
 	}
 
-	#myTable {
-	  width: 100vw;
-	  margin-left: -15px;
-	}
+	//Remove Actions th contents
+		#span-actions{
+			display:none;
+		}
+
+		#th-actions{
+			border: none;
+			padding: 0px;
+		}
 }
 
 
