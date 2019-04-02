@@ -1,23 +1,4 @@
 $(document).ready(function(){
-	function responsive(){
-		var width = $(window).width();
-
-		if (width <= 375){
-			$("#th-actions").text("");
-		}
-		if (width > 375){
-			$("#th-actions").text("Actions");
-		}
-	}
-
-	//Adapt to viewport
-	responsive();
-
-	//Adapt to viewport on change
-	$(window).resize(function(){
-	  responsive();
-	});
-
 	//Sortable table
 	$('#myTable').DataTable({
 		"columnDefs": [ {
@@ -52,7 +33,7 @@ $(document).ready(function(){
 				maxlength: "Maximum 255 characters"
 			}	
 		}
-	});		
+	});	
 	
 	jQuery.extend(jQuery.validator.messages, {
 		required:'You have to fill in this field',

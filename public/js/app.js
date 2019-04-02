@@ -49144,25 +49144,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  function responsive() {
-    var width = $(window).width();
-
-    if (width <= 375) {
-      $("#th-actions").text("");
-    }
-
-    if (width > 375) {
-      $("#th-actions").text("Actions");
-    }
-  } //Adapt to viewport
-
-
-  responsive(); //Adapt to viewport on change
-
-  $(window).resize(function () {
-    responsive();
-  }); //Sortable table
-
+  //Sortable table
   $('#myTable').DataTable({
     "columnDefs": [{
       "targets": 2,
@@ -49195,28 +49177,6 @@ $(document).ready(function () {
       }
     }
   });
-  /*$('#todo-form').each(function() {
-      $(this).validate({     
-  rules: {			
-  "description":{
-  	required: true,
-  	minlength: 1,
-  	maxlength: 255,
-  },
-  "due_date":{
-  	required: true,
-  	dateCustom: true
-  }
-  },
-  messages: {
-  description:{
-  	minlength: "Atleast 1 character",
-  	maxlength: "Maximum 255 characters"
-  }	
-  }
-      });
-  });*/
-
   jQuery.extend(jQuery.validator.messages, {
     required: 'You have to fill in this field'
   });
