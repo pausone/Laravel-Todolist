@@ -49144,17 +49144,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  var width = $(window).width();
-
-  if (width <= 375) {
-    $("#th-actions").text("");
-  }
-
-  if (width > 375) {
-    $("#th-actions").text("Actions");
-  }
-
-  $(window).resize(function () {
+  function responsive() {
     var width = $(window).width();
 
     if (width <= 375) {
@@ -49164,6 +49154,13 @@ $(document).ready(function () {
     if (width > 375) {
       $("#th-actions").text("Actions");
     }
+  } //Adapt to viewport
+
+
+  responsive(); //Adapt to viewport on change
+
+  $(window).resize(function () {
+    responsive();
   }); //Sortable table
 
   $('#myTable').DataTable({
@@ -49172,9 +49169,9 @@ $(document).ready(function () {
       "orderable": false
     }],
     "order": [[1, "desc"]]
-  }); //jQuery UI
+  }); //jQuery UI datepicker
 
-  $('.datepicker').datepicker({}); //-------------------------Validation with jquery validation plugin-----------------------------------------------
+  $('.datepicker').datepicker({}); //-------------------------Validation with jQuery validation plugin-----------------------------------------------
 
   $.validator.addMethod('lettersOnly', function (value, element) {
     return /[a-zA-ZäöüßÄÖÜ]/.test(value);
