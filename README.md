@@ -1,5 +1,5 @@
 # Laravel-Todolist
-Application for handling tasks. 
+Application with authentication for handling tasks. 
 
 Sortable, searchable table.
 
@@ -7,9 +7,9 @@ Responsive(see mobile version at bottom of this document).
 
 Uses jQuery plugins DataTables and jQuery Validation.
 
-Uses Bootstrap for styling.
+Bootstrap for styling.
 
-Has frontend and backend validation for form input.
+Frontend and backend validation for form input.
 
 | ![Image login](/screenshots/tasks_index.JPG)   | 
 | ------------- | 
